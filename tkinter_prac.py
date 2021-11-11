@@ -1,5 +1,7 @@
 # import everything from tkinter so we can make a gui
 from tkinter import *
+#imports python inbuilt image library
+from PIL import ImageTk, Image
 
 # creates a reference variable to the Tkinter library
 # so that we can access its methods
