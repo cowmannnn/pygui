@@ -24,7 +24,7 @@ class Window():
     root.rowconfigure(0, weight=1)
     #
     canvas = Canvas(root, width=100, height=100)
-    canvas.grid(column=0, row=0)
+    canvas.place(x=490, y=20)
     clock_img = ImageTk.PhotoImage(Image.open(r"icons\clock.png"))
     canvas.create_image(20, 20, anchor=NW, image=clock_img)
     #
