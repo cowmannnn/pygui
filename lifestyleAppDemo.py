@@ -20,6 +20,11 @@ class Window():
     mainframe.grid(column=0, row=0, sticky=(N, W, E, S))
     root.columnconfigure(0, weight=1)
     root.rowconfigure(0, weight=1)
+    #
+    canvas = Canvas(root, width = 100, height = 100)
+    canvas.grid(column=0,row=0)
+    clock_img = ImageTk.PhotoImage(Image.open(r"icons\clock.png"))
+    canvas.create_image(20, 20, anchor=NW, image=clock_img)
     
     
 
