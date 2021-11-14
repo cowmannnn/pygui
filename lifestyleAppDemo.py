@@ -4,7 +4,7 @@ from tkinter import ttk
 # imports python inbuilt image library
 from PIL import ImageTk, Image
 # importing strftime function to retrieve system time
-from time import strftime
+from time import strftime, time
 
 # creates a reference variable to the Tkinter library
 # so that we can access its methods
@@ -15,7 +15,7 @@ style = ttk.Style()
 root.geometry("350x500")
 # title and icon of app changed
 root.title("WorkLife App v0.2")
-root.iconbitmap("rating.ico")
+root.iconbitmap(r"icons\rating.ico")
 
 # class created for the main window
 
@@ -48,12 +48,20 @@ class Buttons():
 
 
 class clock():
-    time = strftime("%H:%M:%S $p")
-    time_label = Label(root, font=("calibri", 40, "bold"),
-                       background="purple", foreground="white")
-    time_label.config(text = time_label)
+    def __init__(self):
+        time_str = strftime("%H:%M:%S")
+        self.time_label = Label(root, font=("calibri", 20, "bold"),
+                        foreground="black")
+        self.time_label.config(text = time_str)
+        self.time_label.place(x=0, y=90)
+        self.seconds = 0
     
-    time_label.place(x=0, y=105)
+    def refresh(self):
+        self.seconds += 1
+        self.time_label.after(1000, self.__init__)
+
+refresh = clock()
+refresh.refresh
 
 # event loop
 root.mainloop()
