@@ -3,6 +3,8 @@ from tkinter import *
 from tkinter import ttk
 # imports python inbuilt image library
 from PIL import ImageTk, Image
+# importing strftime function to retrieve system time
+from time import strftime
 
 # creates a reference variable to the Tkinter library
 # so that we can access its methods
@@ -11,10 +13,13 @@ root = Tk()
 style = ttk.Style()
 # window size is set
 root.geometry("350x500")
-# title of app changed
+# title and icon of app changed
 root.title("WorkLife App v0.2")
+root.iconbitmap("rating.ico")
 
 # class created for the main window
+
+
 class Window():
     mainframe = ttk.Frame(root, padding="3 3 12 12")
     mainframe.grid(column=0, row=0, sticky=(N, W, E, S))
@@ -23,8 +28,8 @@ class Window():
     #
     canvas = Canvas(root, width=200, height=200)
     canvas.place(x=0, y=0)
-    clock_img = ImageTk.PhotoImage(Image.open(r"icons\clock.png"))
-    canvas.create_image(20, 20, anchor=NW, image=clock_img)
+    rating_img = ImageTk.PhotoImage(Image.open(r"icons\rating.png"))
+    canvas.create_image(20, 20, anchor=NW, image=rating_img)
     #
 
 
@@ -41,6 +46,14 @@ class Buttons():
     exercise_button = Button(root, width=12, height=4)
     exercise_button.place(x=262, y=430)
 
+
+class clock():
+    time = strftime("%H:%M:%S $p")
+    time_label = Label(root, font=("calibri", 40, "bold"),
+                       background="purple", foreground="white")
+    time_label.config(text = time_label)
+    
+    time_label.place(x=0, y=105)
 
 # event loop
 root.mainloop()
