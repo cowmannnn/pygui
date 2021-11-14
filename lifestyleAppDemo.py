@@ -15,8 +15,6 @@ root.geometry("350x500")
 root.title("WorkLife App v0.2")
 
 # class created for the main window
-
-
 class Window():
     mainframe = ttk.Frame(root, padding="3 3 12 12")
     mainframe.grid(column=0, row=0, sticky=(N, W, E, S))
@@ -28,9 +26,9 @@ class Window():
     clock_img = ImageTk.PhotoImage(Image.open(r"icons\clock.png"))
     canvas.create_image(20, 20, anchor=NW, image=clock_img)
     #
-    
 
-class Buttons():   
+
+class Buttons():
     tasks_button = Button(root, width=11, height=4)
     tasks_button.place(x=0, y=430,)
 
