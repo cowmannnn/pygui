@@ -33,6 +33,7 @@ class Window():
     #
 
 
+# class which holds the buttons and places them on the gui
 class Buttons():
     tasks_button = Button(root, width=11, height=4)
     tasks_button.place(x=0, y=430,)
@@ -46,20 +47,25 @@ class Buttons():
     exercise_button = Button(root, width=12, height=4)
     exercise_button.place(x=262, y=430)
 
+# class which holds the methods that allow the clock to
+# display system time, refresh method WIP
+
 
 class clock():
     def __init__(self):
         time_str = strftime("%H:%M:%S")
         self.time_label = Label(root, font=("calibri", 20, "bold"),
-                        foreground="black")
-        self.time_label.config(text = time_str)
+                                foreground="black")
+        self.time_label.config(text=time_str)
         self.time_label.place(x=0, y=90)
         self.seconds = 0
-    
+
     def refresh(self):
         self.seconds += 1
         self.time_label.after(1000, self.__init__)
 
+
+# clock is defined and called
 refresh = clock()
 refresh.refresh
 
