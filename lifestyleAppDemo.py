@@ -26,29 +26,35 @@ class Window():
     root.columnconfigure(0, weight=1)
     root.rowconfigure(0, weight=1)
     #
-    canvas = Canvas(root, width=200, height=200)
-    canvas.place(x=0, y=0)
+    rating = Canvas(root, width=200, height=200)
+    rating.place(x=0, y=0)
     rating_img = ImageTk.PhotoImage(Image.open(r"icons\rating.png"))
-    canvas.create_image(20, 20, anchor=NW, image=rating_img)
+    rating.create_image(20, 20, anchor=NW, image=rating_img)
     #
 
 
 # class which holds the buttons and places them on the gui
 class Buttons():
+    # 1
     tasks_button = Button(root, width=11, height=4)
     tasks_button.place(x=0, y=430,)
-
+    # 2
     insights_button = Button(root, width=12, height=4)
     insights_button.place(x=85, y=430)
-
+    # 3
     mindfulness_button = Button(root, width=12, height=4)
     mindfulness_button.place(x=172, y=430)
-
+    # 4
     exercise_button = Button(root, width=12, height=4)
     exercise_button.place(x=262, y=430)
 
 # class which holds the methods that allow the clock to
 # display system time, refresh method WIP
+
+class HealthScore():
+    current_score = 0
+    score = Label(root, text=str(current_score))
+    score.place(x=380, y= 200)
 
 
 class clock():
