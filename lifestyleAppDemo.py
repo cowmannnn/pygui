@@ -36,8 +36,10 @@ class Window():
 # class which holds the buttons and places them on the gui
 class Buttons():
     # 1
+    click_tbutton = PhotoImage(file=r"icons\to-do-list.png")
     tasks_button = Button(root, width=11, height=4)
     tasks_button.place(x=0, y=430,)
+    tasks_label = Label(image= click_tbutton)
     # 2
     insights_button = Button(root, width=12, height=4)
     insights_button.place(x=85, y=430)
@@ -51,7 +53,7 @@ class Buttons():
 # class which holds the methods that allow the clock to
 # display system time, refresh method WIP
 
-class HealthScore():
+class HealthScore():   
     current_score = 0
     score = Label(root, text=str(current_score))
     score.place(x=380, y= 200)
